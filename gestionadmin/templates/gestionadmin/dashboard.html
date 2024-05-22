@@ -391,9 +391,9 @@ Tableau de board
                             <h1>Département : {{ user.profiletudiant.etablissement.departement }}</h1><br>
                             <h1>Résultat Lieu d'affectation : </h1> <h1><span style="text-decoration: underline;">{{ user.profiletudiant.etablissement }}</span></h1>
                         {% elif user.profiletudiant.etablissement is not None %}                           
-                            VOS CHOIX ONT BIEN ÉTÉ ENREGISTRÉS <br> En cours...                     
+                            VOS CHOIX ONT BIEN ÉTÉ ENREGISTRÉS <br>                     
                         {% else %}
-                            Vous ne pouvez pas encore effectuer vos choix
+                            <span style="color: red;">Vous ne pouvez pas encore effectuer vos choix</span>
                         {% endif %}
                         <img src="../../assets/media/svg/brand-logos/github.svg" class="h-30px my-2" alt=""/>  
                     </a>

@@ -14,6 +14,8 @@
     <!-- ===============================================-->
     <!--    Favicons-->
     <!-- ===============================================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" /> -->
     <link rel="shortcut icon" href="{% static 'gestionadmin/assets/media/logos/im3.jpeg' %}"/>
     <!-- <link rel="apple-touch-icon" sizes="180x180" href="{% static 'gestionadmin/frontoffice/assets/img/favicons/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'gestionadmin/frontoffice/assets/img/favicons/favicon-32x32.png' %}">
@@ -55,6 +57,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700&amp;family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300&amp;display=swap" rel="stylesheet">
     <link href="{% static 'gestionadmin/frontoffice/assets/css/theme.min.css' %}" rel="stylesheet" />
     <link href="{% static 'gestionadmin/frontoffice/assets/css/user.min.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'gestionadmin/styles.css' %}">
   </head>
 
   <body>
@@ -63,13 +66,13 @@
     <!-- ===============================================-->
     <main class="main" id="top">
       <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="light">
-        <div class="container"><a class="navbar-brand" href="index-2.html"><img src="{% static 'gestionadmin/assets/media/logos/im3.png' %}" height="85" alt="logo" /></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand" href=""><img src="{% static 'gestionadmin/assets/media/logos/im3.png' %}" height="85" alt="logo" /></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base align-items-center">
-              <li class="nav-item"><a class="nav-link px-3" href="#product">Accueil</a></li>
-              <li class="nav-item"><a class="nav-link px-3" href="#customers">A propos</a></li>
+              <li class="nav-item"><a class="nav-link px-3" href="">Accueil</a></li>
+              <li class="nav-item"><a class="nav-link px-3" href="#product">A propos</a></li>
               <!-- <li class="nav-item"><a class="nav-link px-3" href="#pricing">FAQ</a></li> -->
-              <li class="nav-item"><a class="nav-link pl-3 me-3" href="#docs">Docs </a></li>
+              <li class="nav-item"><a class="nav-link pl-3 me-3" href="#customers">Docs </a></li>
             </ul>
                 {% if user.is_authenticated %}
                     <a href="{% url 'gestionadmin:dashboard' %}">Tableau de Bord</a><span>    </span>
@@ -89,7 +92,7 @@
           <div class="row align-items-center h-100 justify-content-center justify-content-lg-start">
             <div class="col-md-10 col-xxl-5 text-md-start text-center py-6 pt-6">
               <h4 class="fs-4 fs-md-5 fs-xxl-4" data-zanim-xs='{"delay":0.3}' data-zanim-trigger="scroll">Affectation AI</h4>
-              <p class="fs-1" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll">Affectation AI est une plateforme conçue pour la gestion des affectations des lauréats des écoles normales CMR.</p>
+              <p class="fs-1" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll">Affectation AI est une plateforme conçue pour la gestion des affectations des lauréats des écoles normales.</p>
               <p class="fs-1" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll">Notre solution est conçue pour répondre aux besoins spécifiques des établissements éducatifs, des enseignants et des étudiants, en simplifiant le processus d'affectation et en améliorant la satisfaction de tous les acteurs impliqués.</p>
               <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-md-start mt-5" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll"><a class="btn btn-sm btn-primary me-1" href="{% url 'accounts:login_user' %}" role="button">Commençons</a><a class="btn btn-sm btn-default" href="{% url 'accounts:login_user' %}" role="button">Effectuer ses choix ?<i class="fas fa-arrow-right ms-2"></i></a></div>
             </div>
@@ -117,7 +120,7 @@
             <div class="col-md-6" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll">
               <div class="w-100 h-100 p-5 services-card-shadow rounded-4"><img src="{% static 'gestionadmin/frontoffice/assets/img/icons/2.png' %}" alt="Comment" style="width:95px;" />
                 <h3 class="mt-3 lh-base">Algorithme d'Affectation Avancé </h3>
-                <p class="mb-0">Utilisant des technologies d'intelligence artificielle basé sur les critères homologués, le système assure une répartition équitable et optimisée des lauréats en fonction de divers critères tels que les préférences, les compétences, et les besoins des établissements.</p>
+                <p class="mb-0">Utilisant des technologies d'intelligence artificielle basé sur les critères homologués, le système assure une répartition équitable et optimisée des lauréats en fonction de divers critères tels que les préférences, l'ordre de mérite, et les besoins des établissements.</p>
               </div>
             </div>
             <div class="col-md-6" data-zanim-xs='{"delay":0.6}' data-zanim-trigger="scroll">
@@ -191,47 +194,96 @@
         </div><!-- end of .container-->
       </section><!-- <section> close ============================-->
       <!-- ============================================-->
+      <h1>Test des Icônes Font Awesome</h1>
 
-      <section class="py-0 bg-1000">
-        <div class="container">
-          <div class="row py-7">
-            <div class="col-12 col-sm-12 col-lg-6 mb-4 order-0 order-sm-0"><a class="text-decoration-none" href="">
-              <img src="{% static 'gestionadmin/assets/media/logos/im3.png' %}" height="100" alt="" /></a>
-              <p class="text-light mb-5">CM: +237 6 55 43 07 51</p>
-              <p class="text-light mt-1">enset@ginfo.cm</p>
-              <div class="d-flex"><a href="#!"><img class="me-xl-3 me-1" src="{% static 'gestionadmin/frontoffice/assets/img/gallery/linkedin-line1.svg' %}" alt="in" width='20px' "width:'20px'" height:'20px'="height:'20px'" /></a><a href="#!"><img class="me-xl-3 me-1" src="{% static 'gestionadmin/frontoffice/assets/img/gallery/facebook-line1.svg' %}" alt="fb" width:'20px'="width:'20px'" height:'20px'="height:'20px'" /></a><a href="#!"><img class="me-xl-3 me-1" src="{% static 'gestionadmin/frontoffice/assets/img/gallery/twitter-line1.svg' %}" alt="twitter" width:'20px'="width:'20px'" height:'20px'="height:'20px'" /></a><a href="#!"><img class="me-xl-3 me-1" src="{% static 'gestionadmin/frontoffice/assets/img/gallery/instagram-line1.svg' %}" alt="instragram" width:'20px'="width:'20px'" height:'20px'="height:'20px'" /></a></div>
+      <footer class="container-fluid footer-bg">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-3">
+                <ul class="footer-list" style="list-style-type: none;">
+                    <h4 style="color:white;">CONTENU</h4>
+                    <li>Nouvelles ressources</li>
+                    <li>Le contenu le plus populaire</li>
+                    <li>Tendances de recherche</li>
+                    <li>Blog</li>
+                </ul>
             </div>
-            <div class="col-12 col-sm-4 col-lg-2 mb-3 order-2 order-sm-1">
-              <h5 class="lh-lg fw-bold text-light font-sans-serif">Resume</h5>
-              <ul class="list-unstyled text-light mb-md-4">
-                <li class="lh-lg"><a class="text-500 footer-link text-light" href="#!">Accueil</a></li>
-                <li class="lh-lg"><a class="text-500 footer-link text-light" href="#!">A propos</a></li>
-                <li class="lh-lg"><a class="text-500 footer-link text-light" href="#!">Docs</a></li>
-                <li class="lh-lg"><a class="text-500 footer-link text-light" href="{% url 'accounts:login_user' %}">Se connecter</a></li>
-              </ul>
+            <div class="col-sm-12 col-md-6 col-lg-3">
+                <ul class="footer-list" style="list-style-type: none;">
+                    <h4 style="color: white;">INFORMATIONS</h4>
+                    <li>Prix</li>
+                    <li>A propos de nous</li>
+                    <li>Salle de presse</li>
+                    <li>API</li>
+                    <li>Emploi</li>
+                    <li>Vendre mon contenu</li>
+                    <li>Directives de marque Freepik</li>
+                </ul>
             </div>
-          </div>
+            <div class="col-sm-12 col-md-6 col-lg-3">
+                <ul class="footer-list" style="list-style-type: none;">
+                    <h4 style="color: white;">LEGAL</h4>
+                    <li>Conditions générales</li>
+                    <li>Accord de licence</li>
+                    <li>Politique de confidentialité</li>
+                    <li>Informations sur les droits d'auteur</li>
+                    <li>Politique de cookie</li>
+                    <li>Cookies Settings</li>
+                </ul>
+                <ul class="footer-list" style="list-style-type: none;">
+                    <h4 style="color: white;">ASSISTANCE</h4>
+                    <li>FAQ</li>
+                    <li>Coordonnées</li>
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 main-footer">
+                <ul class="footer-list">
+                    <h4 style="color: white;">RESEAUX SOCIAUX</h4>
+                    <div class="d-flex mb-3">
+                        <div class="me-3 social-media-icon fb">
+                            <i class="fas fa-facebook-official"></i>
+                        </div>
+                        <div class="me-3 social-media-icon twitter">
+                            <i class="fas fa-twitter"></i>
+                        </div>
+                        <div class="me-3 social-media-icon pin">
+                            <i class="fas fa-pinterest"></i>                            
+                        </div>
+                        <div class="me-3 social-media-icon insta">
+                            <i class="fas fa-instagram"></i>                            
+                        </div>
+                        <div class="me-3 social-media-icon ytube">
+                            <i class="fas fa-youtube"></i>                            
+                        </div>
+                    </div>
+                    <span class=" fw-bold font-size-13" style="color: grey;">Recevez des images exclusives directement dans votre boite de réception</span> <br>
+                    <a href="{% url 'accounts:login_user' %}"><button class="btn btn-primary fw-bold px-4 mt-4">Se Connecter</button></a>
+                </ul>
+            </div>
+            <div style="padding-bottom: 40px;"></div>
+            <div>
+                <hr  class="color-light-grey-line">
+            </div>
+            <div class="second-last-footer">
+                <div class="img-div">
+                    <img src="{% static 'gestionadmin/assets/media/logos/im3.png' %}" alt="">
+                    <span class="footer-text">Copyright © 2024 Affectation AI. All rights reserved</span>
+                </div>
+                <div class="signature-div">
+                    <button type="button" class="btn btn-outline-light px-5 py-2">Français</button>
+                </div>
+            </div>
+            <div class="footer-end">
+                <!-- <h6 class=" footer-text">Freepik clone made by AJMAL FARIS for Edu purpose</h6>
+                <div class="footer-span">
+                    <span>Freepik</span>
+                    <span>Flaticon</span>
+                    <span>Slidesgo</span>
+                    <span>Wepik</span>
+                    <span>Videvo</span>
+                </div> -->
+            </div>
         </div>
-
-        <!-- ============================================-->
-        <!-- <section> begin ============================-->
-        <section class="py-0 bg-1000">
-          <div class="container">
-            <div class="row justify-content-md-between justify-content-evenly py-3">
-              <div class="col-12 col-sm-8 col-md-6 col-lg-auto text-center text-md-start">
-                <p class="fs--1 my-2 fw-bold text-200">&copy; 2024 Affectation AI</p>
-              </div>
-              <div class="col-12 col-sm-8 col-md-6">
-                <p class="fs--1 my-2 text-center text-md-end text-200"> Made with&nbsp;<svg class="bi bi-suit-heart-fill" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#F95C19" viewBox="0 0 16 16">
-                    <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"></path>
-                  </svg>&nbsp;by&nbsp;<a class="fw-bold text-info text-200" href="https://themewagon.com/" target="_blank">Danie &  </a></p>
-              </div>
-            </div>
-          </div><!-- end of .container-->
-        </section><!-- <section> close ============================-->
-        <!-- ============================================-->
-
-      </section>
+    </footer>
     </main><!-- ===============================================-->
     <!--    End of Main Content-->
     <!-- ===============================================-->

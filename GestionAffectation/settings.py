@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'accounts',
     'gestionadmin',
     'gestiondelegation',
-    'gestionetablissement'
+    'gestionetablissement',
+    'import_export'
 ]
 
 MIDDLEWARE = [
@@ -193,3 +194,11 @@ def get_app_list(self, request, app_label=None):
 admin.AdminSite.get_app_list = get_app_list
 
 LOGOUT_REDIRECT_URL = 'gestionadmin:home'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'citoyen.x14@gmail.com'
+EMAIL_HOST_PASSWORD = 'oizx nlfz nvsa vuio'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False

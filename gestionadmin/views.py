@@ -9,10 +9,20 @@ from mimetypes import guess_type
 from django.urls import resolve
 from django.db.models import Sum, Q, F, Value
 from django.db.models.functions import Coalesce
+from django.conf import settings
+from django.core.mail import send_mail, BadHeaderError
+import requests
+# import pywhatkit
 
 def is_not_superuser(user):
     return user.is_superuser == False
 
+def est_connecte_a_internet(url='http://www.google.com/', timeout=5):
+    try:
+        _ = requests.get(url, timeout=timeout)
+        return True
+    except requests.ConnectionError:
+        return False
 
 def home(request):
     user = request.user
@@ -128,6 +138,29 @@ def dashboard(request):
         
         for choix in choix_regions:
             if choix and affecter_etudiant_etablissement(current_user, choix):
+                
+                #  Envoie email au  prochain eleve avec rang inferieur( __gt dans la logique du classement de l'ordre de mérite)
+                profiles_avec_rang_inferieur = ProfilEtudiant.objects.filter(
+                        filiere=user.profiletudiant.filiere,
+                        rang__gt=user.profiletudiant.rang,
+                        etablissement__isnull=True
+                ).order_by('rang')
+                if profiles_avec_rang_inferieur.exists():
+                    for etudiant in profiles_avec_rang_inferieur:
+                        # receiver_email_user = great_rank_profiles.first() 
+                        try:
+                            message = f"Salutation, ici Affection AI vous pouvez déjà efectué vos choix de lieu d'affectation"
+                            send_mail(
+                                "Processus d'Affectation des lauréats des écoles normales",
+                                message,
+                                "citoyen.x14@gmail.com",
+                                [etudiant.user.email],
+                                fail_silently=False,
+                            )
+                        except BadHeaderError:
+                            print(f"Entete invalide lors de l'envoie du mail à {etudiant.user.email}")
+                        except Exception as e:
+                            print(f"Erreur lors de l'envoie du mail {user.email}: {e}")
                 return redirect('gestionadmin:dashboard')  
         return redirect('gestionadmin:dashboard')  
     
@@ -145,8 +178,15 @@ def dashboard(request):
 def profile(request):
     user = request.user
 
+    # Envoie par whatsapp
+    # pywhatkit.sendwhatmsg('+237 693477714', 'Salut monsieur', 4, 43)
+
+    #Reinitialiser les infos du current user
     # profil_etudiant = ProfilEtudiant.objects.get(user=user)
     # # Mettre à jour le champ etablissement
+    # besoineffectif = BesoinEffectif.objects.get(departement=profil_etudiant.filiere.departement, etablissement=profil_etudiant.etablissement)
+    # besoineffectif.nombreEffectif += 1
+    # besoineffectif.save()
     # profil_etudiant.etablissement = None
     # profil_etudiant.is_visible = False
     # # Sauvegarder les modifications
