@@ -91,8 +91,11 @@ class ProfileEtudiantForm(forms.ModelForm):
     # sexes = [('M', 'Masculin'), ('F', "Féminin")]
     # sexe = forms.ChoiceField(label = "Catégorie", choices = sexes)
 
-    
-    
+
     class Meta:
         model = ProfilEtudiant
-        fields = ['filiere', 'rang', 'dateNaissance', 'anneeSortie', 'matricule', 'telephone', 'sexe']
+        # fieldsets = [
+        #     ('Informations', {'fields':['filiere', 'rang', 'dateNaissance', 'anneeSortie', 'matricule', 'telephone', 'sexe'] }),
+        #     ('Regroupement Familial', {'fields': ['anneeMariage', 'estEffectif', 'regionRegroupement']})
+        # ]
+        fields = ['filiere', 'rang', 'dateNaissance', 'anneeSortie', 'matricule', 'telephone', 'sexe', 'anneeMariage', 'estEffectif', 'regionRegroupement']
